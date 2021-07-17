@@ -28,14 +28,13 @@ driver.refresh()
 
 driver.find_element_by_css_selector('#accept').click()
 
-time_column = driver.find_element_by_css_selector('th.text-right.column-icon.best-lap-col')
-time_column.click()
-time_column = driver.find_element_by_css_selector('th.text-right.column-icon.best-lap-number-col')
-time_column.click()
-time_column = driver.find_element_by_xpath('//html/body/div/div/div[2]/div[1]/div[2]/div/table/thead/tr/th[15]')
-time_column.click()
-time_column = driver.find_element_by_xpath('//html/body/div/div/div[2]/div[1]/div[2]/div/table/thead/tr/th[15]')
-time_column.click()
+# time_column = driver.find_element_by_css_selector('th.text-right.column-icon.best-lap-col')
+# time_column.click()
+# time_column = driver.find_element_by_css_selector('th.text-right.column-icon.best-lap-number-col')
+# time_column.click()
+# time_column = driver.find_element_by_xpath('//html/body/div/div/div[2]/div[1]/div[2]/div/table/thead/tr/th[15]')
+# time_column.click()
+
 
 pit_times = defaultdict(list)
 driver_pit_num = defaultdict(int)
@@ -57,7 +56,7 @@ while current_time != '1:00':
         row = [field.text for field in ele.find_elements_by_css_selector("*") if field.text]
         table_sample.append(row)
     
-    print(table_sample)
+#     print(table_sample)
     
     current_time = driver.find_element_by_class_name('hour-title').text
     current_status = driver.find_element_by_class_name('race-status').text
